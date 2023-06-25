@@ -22,6 +22,10 @@ const imapConfig = {
   tls: true,
 };
 
+app.get("/", function(req, res){
+  res.send({message:"Welcome to Email App"})
+})
+
 // Route for retrieving emails
 app.get('/emails', (req, res) => {
   const imap = new Imap(imapConfig);
